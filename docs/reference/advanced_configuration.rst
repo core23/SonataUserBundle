@@ -9,21 +9,6 @@ Full configuration options:
 
 .. code-block:: yaml
 
-    fos_user:
-        db_driver:        orm # can be orm or mongodb (support is also available within FOSUser for couchdb, propel but none is given for SonataUserBundle)
-        firewall_name:    main
-        user_class:       Application\Sonata\UserBundle\Entity\User
-
-        group:
-            group_class:  Application\Sonata\UserBundle\Entity\Group
-
-        profile:
-            # Authentication Form
-            form:
-                type:               fos_user_profile
-                name:               fos_user_profile_form
-                validation_groups:  [Authentication] # Please note : this is not the default value
-
     sonata_user:
         security_acl: false
         manager_type: orm      # can be orm or mongodb
@@ -55,20 +40,11 @@ Full configuration options:
 
         mailer: sonata.user.mailer.default # Service used to send emails
 
-    # override FOSUser default serialization
-    jms_serializer:
-        metadata:
-            directories:
-                App:
-                    path: "%kernel.root_dir%/../vendor/sonata-project/user-bundle/Sonata/UserBundle/Resources/config/serializer/FOSUserBundle"
-                    namespace_prefix: 'FOS\UserBundle'
-
     # Enable Doctrine to map the provided entities
     doctrine:
         orm:
             entity_managers:
                 default:
                     mappings:
-                        FOSUserBundle: ~
                         ApplicationSonataUserBundle: ~
                         SonataUserBundle: ~

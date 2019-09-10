@@ -48,10 +48,6 @@ matrix:
     - php: '7.3'
       env: SYMFONY='dev-master as 3.4.x-dev'
     - php: '7.3'
-      env: FOS_USER=2.*
-    - php: '7.3'
-      env: FOS_USER='dev-master as 2.x-dev'
-    - php: '7.3'
       env: SONATA_CORE=3.*
     - php: '7.3'
       env: SONATA_CORE='dev-master as 3.x-dev'
@@ -65,7 +61,6 @@ matrix:
     - php: nightly
     - env: SYMFONY_DEPRECATIONS_HELPER=0
     - env: SYMFONY='dev-master as 3.4.x-dev'
-    - env: FOS_USER='dev-master as 2.x-dev'
     - env: SONATA_CORE='dev-master as 3.x-dev'
     - env: SONATA_ADMIN='dev-master as 3.x-dev'
 

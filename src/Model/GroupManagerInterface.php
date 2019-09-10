@@ -13,14 +13,12 @@ declare(strict_types=1);
 
 namespace Sonata\UserBundle\Model;
 
-use FOS\UserBundle\Model\GroupInterface;
-use FOS\UserBundle\Model\GroupManagerInterface as BaseInterface;
 use Sonata\CoreBundle\Model\PageableManagerInterface;
 
 /**
  * @author Hugo Briand <briand@ekino.com>
  */
-interface GroupManagerInterface extends BaseInterface, PageableManagerInterface
+interface GroupManagerInterface extends PageableManagerInterface
 {
     /**
      * Alias for the repository method.

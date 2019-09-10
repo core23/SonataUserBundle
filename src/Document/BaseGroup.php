@@ -13,12 +13,12 @@ declare(strict_types=1);
 
 namespace Sonata\UserBundle\Document;
 
-use FOS\UserBundle\Model\Group as AbstractedGroup;
+use Sonata\UserBundle\Model\Group;
 
 /**
  * Represents a Base Group Document.
  */
-class BaseGroup extends AbstractedGroup
+class BaseGroup extends Group
 {
     /**
      * Returns a string representation.

@@ -45,7 +45,6 @@ are not already enabled::
         Sonata\CoreBundle\SonataCoreBundle::class => ['all' => true],
         Sonata\BlockBundle\SonataBlockBundle::class => ['all' => true],
         Sonata\EasyExtendsBundle\SonataEasyExtendsBundle::class => ['all' => true],
-        FOS\UserBundle\FOSUserBundle::class => ['all' => true],
         Sonata\UserBundle\SonataUserBundle::class => ['all' => true],
     ];
 
@@ -66,7 +65,6 @@ are not already enabled::
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             // ...
-            new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle(),
             // ...
         ];
@@ -99,7 +97,7 @@ settings of `super-admin` users, to enable this use the following configuration:
 
     security:
         encoders:
-            FOS\UserBundle\Model\UserInterface: sha512
+            Sonata\UserBundle\Model\UserInterface: sha512
 
         acl:
             connection: default
@@ -131,38 +129,12 @@ And these in the config mapping definition (or enable `auto_mapping <http://symf
                 default:
                     mappings:
                         SonataUserBundle: ~
-                        FOSUserBundle: ~
-
-FOSUserBundle Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Add these config lines to your FOSUserBundle configuration:
-
-.. code-block:: yaml
-
-    # config/packages/fos_user.yaml
-
-    fos_user:
-        db_driver:      orm # can be orm or odm
-        firewall_name:  main
-        user_class:     Sonata\UserBundle\Entity\BaseUser
-
-        group:
-            group_class:   Sonata\UserBundle\Entity\BaseGroup
-            group_manager: sonata.user.orm.group_manager # If you're using doctrine orm (use sonata.user.mongodb.group_manager for mongodb)
-
-        service:
-            user_manager: sonata.user.orm.user_manager
-
-        from_email:
-            address: "%mailer_user%"
-            sender_name: "%mailer_user%"
 
 Mailer Configuration
 ~~~~~~~~~~~~~~~~~~~~
 
 You can define a custom mailer to send reset password emails.
-Your mailer will have to implement ``FOS\UserBundle\Mailer\MailerInterface``.
+Your mailer will have to implement ``Sonata\UserBundle\Mailer\MailerInterface``.
 
 .. code-block:: yaml
 
@@ -257,7 +229,7 @@ Add role hierarchy and provider, if you are not using ACL also add the encoder:
                 - ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT  # if you are using acl then this line must be commented
 
         encoders:
-            FOS\UserBundle\Model\UserInterface: bcrypt
+            Sonata\UserBundle\Model\UserInterface: bcrypt
 
         providers:
             fos_userbundle:

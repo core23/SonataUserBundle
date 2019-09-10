@@ -13,7 +13,9 @@ declare(strict_types=1);
 
 namespace Sonata\UserBundle\Model;
 
-interface UserInterface extends \FOS\UserBundle\Model\UserInterface
+use Symfony\Component\Security\Core\User\UserInterface as BaseUserInterface;
+
+interface UserInterface extends BaseUserInterface
 {
     public const GENDER_FEMALE = 'f';
     public const GENDER_MALE = 'm';
@@ -21,7 +23,6 @@ interface UserInterface extends \FOS\UserBundle\Model\UserInterface
 
     /**
      * Sets the creation date.
-     *
      *
      * @return UserInterface
      */

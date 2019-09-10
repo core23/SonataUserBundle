@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Sonata\UserBundle\Entity;
 
-use FOS\UserBundle\Doctrine\GroupManager as BaseGroupManager;
 use Sonata\DatagridBundle\Pager\Doctrine\Pager;
 use Sonata\DatagridBundle\ProxyQuery\Doctrine\ProxyQuery;
 use Sonata\UserBundle\Model\GroupManagerInterface;
@@ -21,7 +20,7 @@ use Sonata\UserBundle\Model\GroupManagerInterface;
 /**
  * @author Hugo Briand <briand@ekino.com>
  */
-class GroupManager extends BaseGroupManager implements GroupManagerInterface
+class GroupManager implements GroupManagerInterface
 {
     /**
      * {@inheritdoc}

@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Sonata\UserBundle;
 
-use Sonata\CoreBundle\Form\FormHelper;
 use Sonata\UserBundle\DependencyInjection\Compiler\GlobalVariablesCompilerPass;
 use Sonata\UserBundle\DependencyInjection\Compiler\RolesMatrixCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

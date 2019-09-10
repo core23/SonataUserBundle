@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace Sonata\UserBundle\Tests\Action;
 
 use FOS\UserBundle\Mailer\MailerInterface;
-use FOS\UserBundle\Model\User;
 use FOS\UserBundle\Model\UserManagerInterface;
 use FOS\UserBundle\Util\TokenGeneratorInterface;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -22,6 +21,7 @@ use PHPUnit\Framework\TestCase;
 use Sonata\AdminBundle\Admin\Pool;
 use Sonata\AdminBundle\Templating\TemplateRegistryInterface;
 use Sonata\UserBundle\Action\SendEmailAction;
+use Sonata\UserBundle\Model\User;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;

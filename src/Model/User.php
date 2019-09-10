@@ -13,12 +13,10 @@ declare(strict_types=1);
 
 namespace Sonata\UserBundle\Model;
 
-use FOS\UserBundle\Model\User as AbstractedUser;
-
 /**
  * Represents a User model.
  */
-abstract class User extends AbstractedUser implements UserInterface
+abstract class User implements UserInterface
 {
     /**
      * @var \DateTime|null
